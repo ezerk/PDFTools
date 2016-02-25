@@ -11,3 +11,4 @@ lib
 .settings
 .project
 .classpath
+.idea/

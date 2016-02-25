@@ -30,7 +30,7 @@ public class PdfPasswordRemover {
 		// TODO Auto-generated method stub
 		String pdfFilePath = args[0];
 		String password = args[1];
-		String dest = args[0] + "_removed.pdf";
+		String dest = args[0] + "_no_password.pdf";
 		PdfPasswordRemover main = new PdfPasswordRemover();
 		main.removePassword(pdfFilePath ,dest, password, null);
 	}
