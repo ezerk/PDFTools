@@ -32,7 +32,7 @@ public class PdfPasswordRemover {
 		String password = args[1];
 		String dest = args[0] + "_removed.pdf";
 		PdfPasswordRemover main = new PdfPasswordRemover();
-		main.removePassword(pdfFilePath ,dest, password, "1234");
+		main.removePassword(pdfFilePath ,dest, password, null);
 	}
 	
 	
@@ -42,9 +42,6 @@ public class PdfPasswordRemover {
 		try {
 			reader = new PdfReader(src, oldPassword.getBytes());
 			stamper = new PdfStamper(reader, new FileOutputStream(dest));
-//	        PdfContentByte canvas = stamper.getOverContent(1);
-//	        ColumnText.showTextAligned(canvas,
-//	                Element.ALIGN_LEFT, new Phrase("Hello people!"), 36, 540, 0);
 			if (newPassword != null){
 				stamper.setEncryption(newPassword.getBytes(), newPassword.getBytes(),
 						PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_128
